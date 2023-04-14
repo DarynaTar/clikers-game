@@ -26,7 +26,7 @@
 </section>
 <section class="message-container"></section>
 
-<!-- Модальное окно для регистрации пользователя -->
+<!-- Modal for registration -->
 <div class="backdrop is-hidden" data-modal>
     <div class="modal-login">
         <button type="button" class="modal-close-btn" data-modal-close>
@@ -36,15 +36,25 @@
         </button>
     <h2 class="modal-title">Create your acount</h2>
     <form class="modal-form">
-        <input type="text" class="modal-input" name="user-name" placeholder="Nickname" required/>
+      <label class="label">
+       <input type="text" class="modal-input" name="user-name" placeholder="Nickname" required/>
+        <svg class="input-icon" width="15" height="12">
+          <use href="./img/icons.svg#icon-user"></use>
+        </svg>
+      </label>
+      <label class="label">
         <input type="email" class="modal-input" name="user-email" placeholder="example@gmail.com" required/>
+           <svg class="input-icon" width="15" height="12">
+        <use href="./img/icons.svg#icon-email"></use>
+      </svg>
+     </label>        
     <button type="submit" class="submit-btn btn">OK</button>
     <button type="reset" class="cansel-btn btn">Cancel</button>
     </form>
     </div>
 </div>
 
-<!-- Модальное окно для сообщения о новом уровне -->
+<!-- Modal for new level-->
 <div class="modal" id="level-up-modal">
     <div class="modal-content">
       <h2>Congratulations!</h2>
@@ -52,7 +62,7 @@
     </div>
   </div>
   
-  <!-- Модальное окно для сообщения о завершении игры -->
+  <!-- Modal for end the game -->
   <div class="modal" id="game-over-modal">
     <div class="modal-content">
       <button type="button" class="modal-close">
@@ -64,9 +74,7 @@
       <p>You have completed the game with a score of <span class="final-score"></span>.</p>
     </div>
   </div>
-  
-
-  <!-- <script src="./js/modal.js"></script> -->
+ <!-- <script src="./js/modal.js"></script> -->
   <script src="./js/main.js"></script>
 </body>
 </html>

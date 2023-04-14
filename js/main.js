@@ -27,10 +27,9 @@
   const form = document.querySelector('form');
   form.addEventListener('submit', handleFormSubmit);
   })();
-
+  
 const scoreContainer = document.querySelector(".score");
 const levelContainer = document.querySelector(".level");
-
 const enemyImages = ["img/pic1.png", "img/pic2.png", "img/pic3.png", "img/pic4.png", "img/pic5.png"];
 const enemyWidth = [200, 200, 300, 350, 400];
 const levelUpModal = document.querySelector("#level-up-modal");
@@ -38,7 +37,7 @@ const levelNumber = document.querySelector(".level-number");
 const gameOverModal = document.querySelector("#game-over-modal");
 const gameOverModalBtn = document.querySelector(".modal-close");
 const finalScore = document.querySelector(".final-score");
-const targetClicks = [5, 7, 9, 12, 15];
+const targetClicks = [5, 8, 12, 17, 22];
 let currentLevel = 1;
 let currentScore = 0;
 
