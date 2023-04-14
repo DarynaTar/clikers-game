@@ -1,33 +1,36 @@
+// Selecting necessary DOM elements for the modal
 (() => {
   const refs = {
-  openModalBtn: document.querySelector("[data-modal-open]"),
-  closeModalBtn: document.querySelector("[data-modal-close]"),
-  modal: document.querySelector("[data-modal]"),
+  openModalBtn: document.querySelector("[data-modal-open]"),// select the button that opens the modal
+  closeModalBtn: document.querySelector("[data-modal-close]"),// select the button that closes the modal
+  modal: document.querySelector("[data-modal]"),// select the modal
   };
   const registrationBtn = document.querySelector('.registration-btn');
   const enemyContainer = document.querySelector(".enemy-container");
   
+  // Adding event listeners to the buttons for opening and closing the modal
   refs.openModalBtn.addEventListener("click", toggleModal);
   refs.closeModalBtn.addEventListener("click", toggleModal);
   
+  // Function to toggle the visibility of the modal
   function toggleModal() {
   refs.modal.classList.toggle("is-hidden");
   }
   
+  // Function to handle form submission
   function handleFormSubmit(event) {
-  event.preventDefault(); // чтобы страница не перезагружалась
-  // ваш код обработки формы, например, отправка данных на сервер
-  
-  registrationBtn.classList.add('is-hidden'); // добавляем класс, который скроет кнопку
+  event.preventDefault();  
+  registrationBtn.classList.add('is-hidden'); 
   enemyContainer.classList.remove("is-hidden");
-  refs.modal.classList.add("is-hidden"); // скрываем модальное окно после успешной отправки формы
+  refs.modal.classList.add("is-hidden");
 
 }
   
   const form = document.querySelector('form');
   form.addEventListener('submit', handleFormSubmit);
   })();
-  
+
+// Selecting necessary DOM elements for the game
 const scoreContainer = document.querySelector(".score");
 const levelContainer = document.querySelector(".level");
 const enemyImages = ["img/pic1.png", "img/pic2.png", "img/pic3.png", "img/pic4.png", "img/pic5.png"];
@@ -41,10 +44,12 @@ const targetClicks = [5, 8, 12, 17, 22];
 let currentLevel = 1;
 let currentScore = 0;
 
-
+// Function to start the game
 function start() {
   const registrationBtn = document.querySelector('.registration-btn');
-  const enemyContainer = document.querySelector(".enemy-container");  
+  const enemyContainer = document.querySelector(".enemy-container");
+  
+  // Adding a click event listener to the enemy container
   enemyContainer.onclick = () => {
     currentScore++;
     updateScore();
@@ -79,16 +84,15 @@ function updateEnemy() {
   enemyContainer.src = `${enemyImages[currentLevel - 1]}`;
 }
 
-function updateWidth() {
-  const enemyContainer = document.querySelector(".enemy-container"); 
-  enemyContainer.width = `${enemyWidth[currentLevel - 1]}`;
-}
-
 function congratulatePlayer() {
   levelNumber.textContent = currentLevel;
   levelUpModal.classList.add("active");
 }
 
+function updateWidth() {
+  const enemyContainer = document.querySelector(".enemy-container"); 
+  enemyContainer.width = `${enemyWidth[currentLevel - 1]}`;
+}
 
 function endGame() {
   finalScore.textContent = currentScore;
